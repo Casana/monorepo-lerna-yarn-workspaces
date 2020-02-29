@@ -1,0 +1,12 @@
+{
+  "name": "@my-poc-scope/my-poc-form",
+  "version": "0.0.0",
+  "description": "Forms template of my application",
+  "main": "index.js",
+  "author": "Carlos Martinez Casana",
+  "license": "MIT",
+  "dependencies": {
+    "@my-poc-scope/my-poc-button": "^0.0.0",
+    "@my-poc-scope/my-poc-regex": "^0.0.0"
+  }
+}

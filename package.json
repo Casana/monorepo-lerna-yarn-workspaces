@@ -1,0 +1,32 @@
+{
+  "name": "lerna-yarn-workspaces-poc",
+  "version": "1.0.0",
+  "description": "Proof of concept of Monorepo with Lerna + Yarn Workspaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Casana/monorepo-lerna-yarn-workspaces.git"
+  },
+  "keywords": [
+    "FrontEnd",
+    "Monorepo",
+    "Lerna",
+    "YarnWorkspaces"
+  ],
+  "author": "Carlos Martinez Casana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Casana/monorepo-lerna-yarn-workspaces/issues"
+  },
+  "homepage": "https://github.com/Casana/monorepo-lerna-yarn-workspaces#readme"
+}

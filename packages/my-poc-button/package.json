@@ -1,0 +1,11 @@
+{
+  "name": "@my-poc-scope/my-poc-button",
+  "version": "0.0.0",
+  "description": "Forms button template of my application",
+  "main": "index.js",
+  "author": "Carlos Martinez Casana",
+  "license": "MIT",
+  "dependencies": {
+    "@my-poc-scope/my-poc-regex": "^0.0.0"
+  }
+}
