@@ -1,8 +1,0 @@
-{
-  "name": "@my-poc-scope/my-poc-regex",
-  "version": "0.0.0",
-  "description": "Regular Expressions for the app, used in all the packages",
-  "main": "index.js",
-  "author": "Carlos Martinez Casana",
-  "license": "MIT"
-}

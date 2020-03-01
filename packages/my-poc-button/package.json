@@ -6,6 +6,6 @@
   "author": "Carlos Martinez Casana",
   "license": "MIT",
   "dependencies": {
-    "@my-poc-scope/my-poc-regex": "^0.0.0"
+    "@my-poc-scope/my-poc-validations": "^0.0.0"
   }
 }

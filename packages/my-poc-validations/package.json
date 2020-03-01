@@ -1,0 +1,8 @@
+{
+  "name": "@my-poc-scope/my-poc-validations",
+  "version": "0.0.0",
+  "description": "General validations for the app, used in all the packages",
+  "main": "index.js",
+  "author": "Carlos Martinez Casana",
+  "license": "MIT"
+}

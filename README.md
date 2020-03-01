@@ -17,7 +17,6 @@ https://lerna.js.org/
 https://classic.yarnpkg.com/en/docs/workspaces/
 
 
-We also have this post as guide: https://medium.com/@jsilvax/a-workflow-guide-for-lerna-with-yarn-workspaces-60f97481149d
 
 ## Quick Start
 
@@ -112,7 +111,7 @@ Doing this is similar to the previous command. This would be for /packages/*.
 It doesn’t matter if they’re local sibling dependencies or from NPM.
 
 ```
-$ lerna add my-poc-regex
+$ lerna add my-poc-validations
 ```
 
 If we have common dev dependencies, is better to specify them in the worksapce root package.json.
@@ -122,9 +121,81 @@ $ yarn add husky --dev -W
 ```
 Adding -W flag instructs Yarn to install the given dependencies for the *entire workspace*
 
+## Lerna features
 
 ### Removing dependencies
-Lerna has *exec* command that runs the given command in each package.
+Lerna *exec* command runs the given command in each package.
 ```
 $ lerna exec -- yarn remove dependency-name
+```
+
+### Running tests
+
+Lerna *run* command run an npm script in each package that contains that script
+
+```
+$ lerna run test --stream
+```
+The stream flag just provides output from the child processes
+
+### Publishing to NPM
+
+We have to verify we are logged in npm:
+```
+$ npm whoami // myusername
+```
+
+Then we can publish with lerna:
+```
+$ lerna publish
+```
+
+### Automatic Publish with Conventional Commits
+
+Lerna supports the use of the Conventional Commits Standard to automate Semantic Versioning in a CI environment.
+
+We can do it by running the command:
+```
+$ lerna publish --conventional-commits --yes
+```
+
+Or modifying our lerna.json:
+```
+"command": {
+    "publish": {
+       "conventionalCommits": true, 
+       "yes": true
+    }
+}
+``` 
+
+## Cross Project Local Development
+
+
+### Symlink a local dependency
+In order to create new components and test it before publishing, we can use yarn link command
+
+```
+$ cd ~/path/to/my-new-component
+$ yarn link
+```
+
+Now our package is symlinked, we can go to the other package to use:
+```
+$ cd ~/path/to/my-other-component
+$ yarn link  @my-scope-name/my-new-component
+```
+
+Any changes in packages/my-new-component will be reflected in my-other-component.
+
+### Unlink a local dependency
+```
+$ cd ~/path/to/my-unlinked-component
+$ yarn unlink
+```
+
+Now we can go to the other package to use:
+```
+$ cd ~/path/to/my-other-component
+$ yarn link  @my-scope-name/my-unlinked-component
 ```
